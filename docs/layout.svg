@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Rascunho do dashboard: filtros na esquerda; correlação e distribuição em duas colunas na área principal">
+<rect width="1200" height="720" fill="#FCFAF7"/>
+<rect width="275" height="720" fill="#F1EBE3"/>
+<g font-family="Arial, sans-serif" fill="#302B29">
+<text x="32" y="60" font-size="26" font-weight="bold">Filtros</text>
+<text x="32" y="110" font-size="16">Variáveis quantitativas</text>
+<rect x="32" y="130" width="210" height="100" rx="8" fill="white" stroke="#D6CCC2"/>
+<text x="46" y="158" font-size="15">Idade · Pressão</text>
+<text x="46" y="185" font-size="15">Colesterol · FC máxima</text>
+<text x="46" y="212" font-size="15">Depressão ST</text>
+<text x="32" y="279" font-size="16">Intervalo de cada medida</text>
+<g stroke="#B44938" stroke-width="5"><path d="M40 315H233 M40 380H233 M40 445H233 M40 510H233 M40 575H233"/></g>
+<g fill="#B44938"><circle cx="40" cy="315" r="8"/><circle cx="233" cy="315" r="8"/><circle cx="40" cy="380" r="8"/><circle cx="233" cy="380" r="8"/><circle cx="40" cy="445" r="8"/><circle cx="233" cy="445" r="8"/><circle cx="40" cy="510" r="8"/><circle cx="233" cy="510" r="8"/><circle cx="40" cy="575" r="8"/><circle cx="233" cy="575" r="8"/></g>
+<text x="315" y="55" font-size="14" fill="#B44938">AULA 21 · HEART DISEASE</text>
+<text x="315" y="100" font-size="32" font-weight="bold">Exploração das variáveis</text>
+<text x="315" y="140" font-size="17">297 pacientes · seleção e intervalos combinados</text>
+<rect x="315" y="180" width="400" height="310" rx="10" fill="white" stroke="#D6CCC2"/>
+<rect x="740" y="180" width="420" height="310" rx="10" fill="white" stroke="#D6CCC2"/>
+<text x="340" y="225" font-size="25" font-weight="bold">Correlação</text>
+<text x="765" y="225" font-size="25" font-weight="bold">Distribuição</text>
+<text x="340" y="285" font-size="17">Variáveis selecionadas</text>
+<text x="340" y="370" font-size="17" fill="#776A60">Heatmap reservado para a Aula 22</text>
+<text x="765" y="285" font-size="17">Seletor da medida</text>
+<text x="765" y="370" font-size="17" fill="#776A60">Histograma reservado para a Aula 22</text>
+<rect x="315" y="520" width="845" height="110" rx="8" fill="white" stroke="#D6CCC2"/>
+<text x="340" y="560" font-size="20">Conferir os dados do recorte</text>
+<text x="340" y="597" font-size="16" fill="#776A60">Expander com prévia dos primeiros 20 pacientes</text>
+<text x="315" y="685" font-size="15" fill="#776A60">Rascunho do layout · Guilherme Alcoforado Rabelo · 2026.2</text>
+</g></svg>
