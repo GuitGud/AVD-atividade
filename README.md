@@ -5,7 +5,9 @@
 Laboratório de distribuição/correlação e panorama descritivo para **coordenadores de pesquisa cardiovascular**, usando a EDA Cleveland Heart Disease da Aula 11.
 
 <!-- APP_PUBLICADO:INICIO -->
-**App publicado:** pendente. A publicação e o teste em janela anônima ainda não foram realizados; o controle do navegador foi interrompido por não identificar a URL com segurança.
+**App publicado:** [Abrir os dois dashboards](https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/)
+
+Acesso HTTP público conferido; teste dos widgets em janela anônima deve ser registrado em entregas/teste-app-publicado.md.
 <!-- APP_PUBLICADO:FIM -->
 
 [Repositório público](https://github.com/GuitGud/AVD-atividade) · [Instruções de publicação](docs/PUBLICACAO.md) · [Checklist de entrega](entregas/README.md)

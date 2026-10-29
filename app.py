@@ -18,19 +18,27 @@ except (OSError, ValueError) as error:
 
 # [IA] Codex/OpenAI - reinicialização explícita dos filtros.
 def reset_filters():
-    for key in ["variaveis", "classes"] + [f"intervalo_{var}" for var in VARS_QUANT]:
-        st.session_state.pop(key, None)
+    st.session_state["variaveis"] = VARS_QUANT.copy()
+    st.session_state["classes"] = CLASSES.copy()
+    for var in VARS_QUANT:
+        st.session_state[f"intervalo_{var}"] = (float(df[var].min()), float(df[var].max()))
+
+
+# Inicializar o estado antes dos widgets evita dois valores-padrão concorrentes.
+st.session_state.setdefault("variaveis", VARS_QUANT.copy())
+st.session_state.setdefault("classes", CLASSES.copy())
 
 with st.sidebar:
     st.header("Recorte da amostra", anchor=False)
     st.caption("Os mesmos filtros alimentam os dois dashboards.")
-    variaveis = st.multiselect("Variáveis quantitativas", VARS_QUANT, default=VARS_QUANT,
+    variaveis = st.multiselect("Variáveis quantitativas", VARS_QUANT,
                               format_func=lambda x: SHORT_LABELS[x], key="variaveis")
-    classes = st.multiselect("Desfecho registrado", CLASSES, default=CLASSES, key="classes")
+    classes = st.multiselect("Desfecho registrado", CLASSES, key="classes")
     intervalos = {}
     for var in variaveis:
         lower, upper = float(df[var].min()), float(df[var].max())
-        intervalos[var] = st.slider(LABELS[var], min_value=lower, max_value=upper, value=(lower, upper),
+        st.session_state.setdefault(f"intervalo_{var}", (lower, upper))
+        intervalos[var] = st.slider(LABELS[var], min_value=lower, max_value=upper,
                                    step=0.1 if var == "oldpeak" else 1.0,
                                    format="%.1f" if var == "oldpeak" else "%.0f", key=f"intervalo_{var}")
     st.button("Restaurar filtros", on_click=reset_filters, key="reset", width="stretch", icon=":material/restart_alt:")

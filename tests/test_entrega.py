@@ -84,6 +84,11 @@ class EntregaTest(unittest.TestCase):
         self.assertEqual(app.multiselect(key="classes").value, ["Normal", "Cardíaco"])
         self.assertEqual(app.slider(key="intervalo_age").value, (29.0, 77.0))
         self.assertEqual(app.metric[0].value, "46,1 %")
+        app.selectbox(key="metodo").set_value("Pearson").run()
+        self.assertEqual(app.slider(key="intervalo_age").value, (29.0, 77.0))
+        self.assertTrue(any("297 de 297" in c.value for c in app.caption))
+        app.multiselect(key="classes").set_value(["Cardíaco"]).run()
+        self.assertTrue(any("137 de 297" in c.value for c in app.caption))
 
     def test_widgets_dos_dois_dashboards(self):
         app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=15).run()
