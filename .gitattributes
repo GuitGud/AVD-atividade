@@ -5,3 +5,5 @@
 *.ipynb text eol=lf
 *.svg text eol=lf
 data/raw/processed.cleveland.data -text
+*.pdf binary
+*.png binary
