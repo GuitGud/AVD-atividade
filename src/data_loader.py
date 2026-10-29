@@ -1,4 +1,5 @@
 """Dados locais exportados pelo notebook da Aula 11."""
+# [IA] Codex/OpenAI - leitura local, cache e verificação do esquema público.
 from pathlib import Path
 
 import pandas as pd
@@ -20,11 +21,13 @@ def load_data() -> pd.DataFrame:
     """Lê somente o tratado; os filtros não alteram o CSV."""
     path = ROOT / "data" / "clean" / "dataset.csv"
     df = pd.read_csv(path)
-    missing = set(VARS_QUANT + ["doenca_cardiaca"]) - set(df.columns)
+    required = VARS_QUANT + ["doenca_cardiaca", "exang", "sexo_label", "faixa_etaria"]
+    missing = set(required) - set(df.columns)
     if missing:
         raise ValueError(f"Colunas ausentes no CSV tratado: {', '.join(sorted(missing))}")
     if df.empty:
         raise ValueError("O dataset tratado está vazio. Execute o notebook da EDA.")
-    if df[VARS_QUANT].isna().any().any():
-        raise ValueError("Há valores ausentes nas variáveis quantitativas. Revise a EDA.")
-    return df
+    if df[required].isna().any().any():
+        raise ValueError("Há valores ausentes nas colunas do painel. Revise a EDA.")
+    # Apenas o esquema público conhecido chega ao app; colunas extras não são expostas.
+    return df[required].copy()

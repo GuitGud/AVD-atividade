@@ -4,6 +4,11 @@ primaryColor = "#B44938"
 backgroundColor = "#FCFAF7"
 secondaryBackgroundColor = "#F1EBE3"
 textColor = "#302B29"
+chartCategoricalColors = ["#81AAA6", "#B44938", "#C59C60", "#476A84"]
+showWidgetBorder = true
+
+[client]
+showErrorDetails = false
 
 [browser]
 gatherUsageStats = false
