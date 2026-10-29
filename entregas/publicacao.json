@@ -2,5 +2,12 @@
   "app_url": "https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/",
   "http_status": 200,
   "checked_at": "2026-10-29T10:24:44.841190-03:00",
-  "anonymous_browser_test": "pending"
+  "anonymous_browser_test": "InPrivate blocked by browser URL enforcement",
+  "public_browser_access": "verified_without_author_login",
+  "browser": "ChatGPT in-app browser, nova aba",
+  "remote_reset_after_fix": "pending_retest",
+  "evidence": [
+    "entregas/evidencias/dashboard-2-publicado.png"
+  ],
+  "filter_reset_fix_commit": "23fbf7c"
 }

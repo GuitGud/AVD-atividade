@@ -7,7 +7,7 @@ Laboratório de distribuição/correlação e panorama descritivo para **coorden
 <!-- APP_PUBLICADO:INICIO -->
 **App publicado:** [Abrir os dois dashboards](https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/)
 
-Acesso HTTP público conferido; teste dos widgets em janela anônima deve ser registrado em entregas/teste-app-publicado.md.
+Acesso público sem login e testes parciais de navegação/controles conferidos no navegador integrado. A janela InPrivate e os itens restantes estão identificados em [registro dos testes](entregas/teste-app-publicado.md).
 <!-- APP_PUBLICADO:FIM -->
 
 [Repositório público](https://github.com/GuitGud/AVD-atividade) · [Instruções de publicação](docs/PUBLICACAO.md) · [Checklist de entrega](entregas/README.md)
@@ -90,6 +90,6 @@ Para regenerar as prévias e os PDFs:
 
 No [Streamlit Community Cloud](https://share.streamlit.io), utilize o repositório `GuitGud/AVD-atividade`, a branch `codex/aula21`, o arquivo `app.py` e Python 3.12. Não há secrets para cadastrar. [Siga as instruções completas](docs/PUBLICACAO.md).
 
-O link público só será incluído neste README após existir e ser verificado; nenhum endereço de app fictício foi inserido. O checklist de janela anônima está em [entregas/teste-app-publicado.md](entregas/teste-app-publicado.md).
+O link público foi registrado no início deste README após a publicação e a verificação de acesso. O registro dos testes online e o checklist de janela anônima estão em [entregas/teste-app-publicado.md](entregas/teste-app-publicado.md).
 
 Fontes: [UCI Heart Disease](https://archive.ics.uci.edu/dataset/45/heart+disease), [modelo da disciplina](https://github.com/mfal-school/AVD-20262-pratica-streamlit), [documentação Streamlit](https://docs.streamlit.io/).

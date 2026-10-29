@@ -102,8 +102,11 @@ with painel:
     ]
     with st.container(horizontal=True):
         for label, field, unit, help_text in specs:
-            value = "Sem dados" if kpis[field] is None else f"{kpis[field]:.1f}".replace(".", ",") + f" {unit}"
-            st.metric(label, value, help=help_text, border=True, width=205)
+            value = "Sem dados" if kpis[field] is None else f"{kpis[field]:.1f}".replace(".", ",")
+            # Unidade em linha própria evita truncar mg/dL em telas menores.
+            with st.container(border=True, width=225, height="stretch"):
+                st.metric(label, value, help=help_text)
+                st.caption(unit)
     st.caption(f"Base de cálculo: {kpis['n']} pacientes · {kpis['positivos']} com diagnóstico positivo · {kpis['angina_n']} com angina no esforço.")
     if recorte.empty:
         st.info("Os três visuais do panorama reaparecem quando houver pacientes no recorte.")

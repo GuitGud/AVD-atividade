@@ -1,6 +1,6 @@
 # Publicação no Streamlit Community Cloud
 
-A publicação ainda está pendente: a automação do navegador foi interrompida por não conseguir identificar a URL com segurança. O repositório e o app estão preparados para esta etapa. Não foi criado um endereço fictício de aplicação.
+Aplicação publicada pelo aluno em 29/10/2026: [abrir os dashboards](https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/). O endereço respondeu HTTP 200 sem autenticação e foi registrado no README. Os resultados dos testes do navegador ficam em `entregas/teste-app-publicado.md`. As instruções abaixo permitem repetir a publicação.
 
 ## Configuração
 

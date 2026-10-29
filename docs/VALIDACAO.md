@@ -35,4 +35,18 @@ A revisão dos arquivos versionados é documentada na preparação do commit. Ne
 
 Os nove gráficos foram exportados a PNG a partir das mesmas especificações Altair do app para conferir escalas, legendas, rótulos e dados. Os dois rascunhos em PDF e o exemplo fictício foram renderizados e inspecionados.
 
-**Pendente:** publicação, teste real das abas e dos widgets no navegador publicado, janela anônima e inclusão de link real do app no README. O controle de navegador foi interrompido por não identificar a URL com segurança. Não existe captura de tela ou resultado de teste remoto que comprove essas etapas.
+## Aplicação publicada e verificação online
+
+URL: https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/
+
+Em 29/10/2026, o aluno publicou o app. Foi conferido acesso HTTPS 200 sem autenticação. Uma nova aba no navegador integrado carregou a aplicação sem login do autor, exibiu o laboratório e alternou para o segundo dashboard com os cinco KPIs esperados e os três visuais.
+
+Foram exercitados os três métodos de correlação, o controle de classes dos histogramas, a separação por desfecho, os cinco sliders quantitativos, o filtro de desfecho e o controle de proporções por faixa. O recorte respondeu às alterações (por exemplo, 199 registros após elevar em um passo os cinco limites inferiores).
+
+O teste online identificou restauração visual incompleta dos sliders: o backend voltava a 297 registros, mas os controles mantinham intervalos antigos na interação seguinte. A correção define explicitamente o estado de todos os filtros e usa somente uma origem para os valores iniciais. A suíte de 15 testes passou novamente e a correção foi verificada no navegador local. O commit 23fbf7c foi enviado para atualização automática do Streamlit. A reconferência dessa correção no servidor público permanece pendente.
+
+Evidência: `entregas/evidencias/dashboard-2-publicado.png` (captura real da versão pública antes da correção, com KPIs de base integral).
+
+**Limites:** o navegador integrado sem login não foi declarado equivalente a uma janela InPrivate. A tentativa de abrir o Edge para esse teste foi bloqueada pelo controle de URL do navegador. Os itens não exercitados e o teste InPrivate estão pendentes em `entregas/teste-app-publicado.md`.
+
+Os cartões também foram ajustados para mostrar a unidade em linha própria, evitando truncamento de mg/dL. A suíte de 15 testes passou após esse ajuste; a conferência visual desse ajuste na publicação permanece pendente junto dos demais itens do navegador.

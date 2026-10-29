@@ -11,10 +11,11 @@
 - [x] Revisão do esquema público e dos arquivos versionados.
 - [x] Exemplo fictício de uso de IA, sem assinatura e identificado como fictício.
 
+- [x] Publicação no Streamlit Community Cloud com acesso público verificado.
+- [x] Link real do app incluído no README.
+
 ## Pendências antes de entregar à professora
 
-- [ ] Publicar no Streamlit Community Cloud.
-- [ ] Adicionar o link real do app no README e verificar o acesso público.
 - [ ] Executar e registrar os testes do app publicado em janela anônima.
 - [ ] Preencher a justificativa individual em justificativa-metricas.md.
 - [ ] Produzir e assinar a declaração real em prompts/DECLARACAO_IA.pdf.
