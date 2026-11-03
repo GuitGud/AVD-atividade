@@ -8,6 +8,22 @@ AGE_ORDER = ["<45", "45-54", "55-64", "65+"]
 CLASSES = ["Normal", "Cardíaco"]
 
 
+def histogram_table(df: pd.DataFrame, variable: str, bins: int, by_class: bool) -> pd.DataFrame:
+    """Conta classes uniformes, incluindo o máximo na última classe."""
+    if bins < 1 or df.empty:
+        return pd.DataFrame(columns=["inicio", "fim", "pacientes", "doenca_cardiaca"])
+    edges = np.histogram_bin_edges(df[variable].to_numpy(), bins=int(bins))
+    groups = [(label, df.loc[df["doenca_cardiaca"].eq(label), variable])
+              for label in CLASSES if df["doenca_cardiaca"].eq(label).any()] if by_class else [("Todos", df[variable])]
+    rows = []
+    for label, values in groups:
+        counts, _ = np.histogram(values.to_numpy(), bins=edges)
+        for i, count in enumerate(counts):
+            rows.append({"inicio": float(edges[i]), "fim": float(edges[i + 1]),
+                         "pacientes": int(count), "doenca_cardiaca": label})
+    return pd.DataFrame(rows)
+
+
 def filter_data(df: pd.DataFrame, intervals: Mapping, classes: Sequence[str]) -> pd.DataFrame:
     """Combina limites inclusivos com E e aplica o filtro de desfecho."""
     mask = df["doenca_cardiaca"].isin(classes)
@@ -39,7 +55,7 @@ def correlation_table(df: pd.DataFrame, variables: Sequence[str], method: str) -
         for x in variables:
             r = corr.loc[y, x]
             records.append({"x": x, "y": y, "r": r,
-                            "rotulo": f"{r:.2f}" if pd.notna(r) else "—",
+                            "rotulo": f"{r:.3f}" if pd.notna(r) else "—",
                             "pares": int(df[[x, y]].dropna().shape[0])})
     return pd.DataFrame(records)
 

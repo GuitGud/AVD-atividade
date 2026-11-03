@@ -7,14 +7,14 @@ Laboratório de distribuição/correlação e panorama descritivo para **coorden
 <!-- APP_PUBLICADO:INICIO -->
 **App publicado:** [Abrir os dois dashboards](https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/)
 
-Acesso público sem login e testes parciais de navegação/controles conferidos no navegador integrado. A janela InPrivate e os itens restantes estão identificados em [registro dos testes](entregas/teste-app-publicado.md).
+Acesso público sem login e controles dos dois dashboards conferidos em 03/11/2026. O recorte de 82 pacientes, o CSV, a restauração, o zoom e os tooltips foram verificados no app publicado. O estado do teste específico InPrivate está no [registro dos testes](entregas/teste-app-publicado.md).
 <!-- APP_PUBLICADO:FIM -->
 
 [Repositório público](https://github.com/GuitGud/AVD-atividade) · [Instruções de publicação](docs/PUBLICACAO.md) · [Checklist de entrega](entregas/README.md)
 
 ## O que o aplicativo oferece
 
-**Dashboard 1 · Laboratório:** mapa de calor com Pearson, Spearman ou Kendall; um histograma por medida quantitativa selecionada; controle do máximo de classes e separação por desfecho. Coeficientes indefinidos não são transformados em zero.
+**Dashboard 1 · Laboratório:** mapa de calor com Pearson, Spearman ou Kendall; um histograma por medida quantitativa selecionada; controle do número exato de classes e separação por desfecho. Coeficientes indefinidos não são transformados em zero.
 
 **Dashboard 2 · Panorama da pesquisa:** cinco métricas do conjunto A escolhido pelo aluno: percentual de diagnóstico positivo, percentual de angina no esforço, idade mediana, colesterol mediano e frequência cardíaca máxima mediana. Três visuais adicionais: percentual positivo por sexo registrado, composição por faixa etária e dispersão entre colesterol e FC máxima.
 
@@ -43,7 +43,7 @@ Abra o endereço indicado pelo terminal, normalmente `http://localhost:8501`. A 
 
 O app aceita somente as colunas públicas necessárias e não carrega nomes, e-mails, IDs ou credenciais. O download contém apenas as medidas selecionadas e o desfecho. Essa revisão é específica dos arquivos do projeto; não substitui o teste do app após publicação.
 
-A amostra é histórica e selecionada. Seus percentuais não representam a prevalência ou o risco da população; os painéis não fazem diagnóstico ou recomendação clínica. As definições e o espaço para justificativa individual estão em [entregas/justificativa-metricas.md](entregas/justificativa-metricas.md).
+A amostra é histórica e selecionada. Seus percentuais não representam a prevalência ou o risco da população; os painéis não fazem diagnóstico ou recomendação clínica. As definições, a justificativa técnica das métricas e os limites de leitura estão em [entregas/justificativa-metricas.md](entregas/justificativa-metricas.md).
 
 ## Entregáveis
 
@@ -57,13 +57,13 @@ data/raw/                           fonte original e dataframe original
 data/clean/dataset.csv              dataframe tratado
 entregas/rascunho-dashboard-1.pdf    rascunho do laboratório
 entregas/rascunho-dashboard-2.pdf    rascunho do panorama
-entregas/justificativa-metricas.md   definições + preenchimento pessoal pendente
+entregas/justificativa-metricas.md   definições e justificativa técnica com apoio de IA
 entregas/previews/                  nove gráficos reais exportados, sem captura de navegador
 prompts/exemplo-dialogo-ficticio.md  diálogo inventado, identificado como fictício
 prompts/EXEMPLO_FICTICIO_DECLARACAO_IA.pdf  exemplo ilustrativo sem assinatura
 ```
 
-**Declaração real:** por solicitação do aluno, será elaborada por ele. O PDF fictício não a substitui. O template pede que a declaração verdadeira e assinada seja entregue como `prompts/DECLARACAO_IA.pdf`; esse arquivo permanece pendente. Também falta completar a justificativa pessoal das métricas.
+**Declaração de IA:** o aluno informou em 03/11/2026 que a elaborará e entregará separadamente, fora do repositório. Nenhuma declaração real foi criada, alterada ou assinada nesta finalização. Os exemplos fictícios em `prompts/` permanecem apenas como referência, identificados como fictícios, e não substituem o documento real. A justificativa técnica das métricas declara seu apoio de IA e não simula reflexão pessoal.
 
 **Dataset:** Heart Disease também aparece na demonstração da disciplina. O uso foi confirmado pelo aluno, mas a aprovação docente como dataset próprio deve ser conferida por ele.
 
@@ -75,7 +75,7 @@ prompts/EXEMPLO_FICTICIO_DECLARACAO_IA.pdf  exemplo ilustrativo sem assinatura
 .venv\Scripts\python.exe scripts/executar_notebook.py
 ```
 
-Os **15 testes** cobrem fórmulas, denominadores, dados exportados, os dois painéis, os controles, recortes vazios, medida constante e amostra unitária. Veja [a validação técnica](docs/VALIDACAO.md). Eles não equivalem ao teste em janela anônima.
+Os **19 testes** cobrem fórmulas, denominadores, dados exportados, os dois painéis, os controles, recortes vazios, medida constante e amostra unitária. Incluem a quantidade exata de classes dos histogramas e diferenças numéricas entre os métodos de correlação. Veja [a validação técnica](docs/VALIDACAO.md). Eles não equivalem ao teste em janela anônima.
 
 Para regenerar as prévias e os PDFs:
 

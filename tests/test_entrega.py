@@ -95,7 +95,10 @@ class EntregaTest(unittest.TestCase):
         for method in ["Pearson", "Kendall", "Spearman"]:
             app.selectbox(key="metodo").set_value(method).run()
             self.assertFalse(app.exception)
+            self.assertTrue(any(s.value == f"Mapa de correlação · {method}" for s in app.subheader))
+            self.assertTrue(any(c.value.startswith(f"Método aplicado: {method}") for c in app.caption))
         app.slider(key="bins").set_value(35).run()
+        self.assertTrue(any("exatamente 35 classes" in c.value for c in app.caption))
         app.toggle(key="separar_classe").set_value(True).run()
         app.toggle(key="faixas_percentual").set_value(True).run()
         self.assertFalse(app.exception)

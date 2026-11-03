@@ -1,44 +1,53 @@
-# Teste do app publicado · verificação parcial em 29/10/2026
+# Teste do app publicado · 03/11/2026
 
-**URL:** https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/
+**Aplicação:** https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/
 
-**Ambiente verificado:** nova aba do navegador integrado, sem autenticação no app e sem login do autor. Isso não comprova uso de uma janela InPrivate.
+**Resultado da automação:** controles e visuais exercitados na versão pública, em uma nova aba do navegador integrado, sem login do autor. O teste posterior do aluno apontou dúvidas sobre dois controles; os ajustes e seu reteste estão descritos ao final. A aplicação estava suspensa por inatividade e foi reativada pelo botão público do Streamlit antes do teste.
 
-**InPrivate:** pendente. A tentativa de controlar o Edge foi bloqueada por não ser possível confirmar a URL com segurança. Não foi marcado como concluído.
+**Janela InPrivate:** teste solicitado ao aluno. Ele confirmou que o app abre sem login e que os filtros de recorte funcionam, mas relatou que método de correlação e máximo de classes pareciam não responder. O reteste desses dois controles está pendente após o ajuste. O controle nativo do Edge voltou a ser bloqueado por não conseguir determinar a URL com segurança. A sessão integrada sem login não foi apresentada como prova de uma janela InPrivate.
 
-**Evidência:** [Dashboard 2 publicado](evidencias/dashboard-2-publicado.png). A imagem foi capturada na aplicação real, com recorte integral, antes da correção da restauração. Não é uma prévia estática dos gráficos.
+## Casos executados
 
-## Resultado por item
+- [x] A aplicação abre publicamente sem autenticação no app.
+- [x] As duas abas carregam: laboratório e panorama.
+- [x] Laboratório apresenta mapa de calor e cinco histogramas na seleção inicial.
+- [x] Panorama apresenta cinco cartões e três visuais adicionais.
+- [x] KPIs integrais conferidos: 46,1%; 32,7%; medianas 56 anos, 243 mg/dL e 153 bpm.
+- [x] Seletor de quantitativas exercitado com uma e nenhuma variável; avisos adequados.
+- [x] Limites inferiores e superiores dos cinco sliders alterados pela interface.
+- [x] Filtro de desfecho exercitado, incluindo seleção vazia.
+- [x] Restauração reconferida no servidor público: ST volta de 0,1 a 0,0; a interação seguinte, filtrando Cardíaco, mantém intervalos restaurados e resulta em 137 registros e 100% de diagnóstico positivo.
+- [x] Pearson, Spearman e Kendall selecionados, aguardando o mapa correspondente aparecer.
+- [x] Máximo de classes do histograma alterado de 20 para 25; separação por desfecho ativada.
+- [x] Controle de proporções por faixa etária ativado.
+- [x] Recorte idade 45–60 e colesterol 200–260 resulta em 82 registros na aplicação pública.
+- [x] CSV baixado pelo botão do app: 82 linhas e seis colunas; conteúdo idêntico ao recorte calculado localmente.
+- [x] Recorte idade 29–29 e colesterol 260–260 resulta em zero registros; os cinco cartões mostram Sem dados e não ocorre erro.
+- [x] Zoom da dispersão exercitado com a rolagem do mouse; limites dos eixos mudaram de aproximadamente 100–580/80–200 para 200–440/110–170.
+- [x] Tooltip de um ponto exibiu idade 65, colesterol 360 mg/dL, FC máxima 151 bpm e desfecho Normal.
+- [x] Expander aberto e prévia tabular exibida.
+- [x] Link da fonte abriu uma nova aba para a página oficial da UCI.
+- [x] Colunas do CSV conferidas: age, trestbps, chol, thalach, oldpeak e doenca_cardiaca; sem contatos, identificadores de pacientes ou credenciais.
+- [x] Link do app presente no README.
+- [ ] Confirmar o requisito específico de abertura e operação em janela InPrivate/anônima.
 
-- [x] URL pública responde HTTPS 200 sem autenticação.
-- [x] Dashboard 1 abre na primeira aba, com mapa de calor e cinco histogramas.
-- [x] Dashboard 2 abre na segunda aba, com cinco cartões e três visuais.
-- [x] KPIs publicados sem filtros: 46,1%; 32,7%; 56 anos; 243 mg/dL; 153 bpm.
-- [x] Pearson, Spearman e Kendall atualizam e exibem o mapa no servidor público.
-- [x] Controle do máximo de classes foi alterado de 20 para 25 e separação por desfecho foi ativada.
-- [x] Os cinco sliders de limites inferiores foram exercitados: idade 30, pressão 95, colesterol 127, FC 72 e ST 0,1; contagem atualizada para 199 pacientes.
-- [x] Remoção de Normal no filtro de desfecho altera o recorte.
-- [x] Controle de proporções por faixa responde na segunda aba.
-- [x] Interface verificada mostra somente atributos da base pública, sem identificadores de pacientes ou credenciais.
-- [x] Link público do app registrado no README.
-- [ ] Teste específico em janela anônima/InPrivate.
-- [ ] Seletor de quantitativas, opções vazias e todos os limites superiores exercitados no app publicado.
-- [ ] Restauração dos filtros reconferida no app público após a correção do commit 23fbf7c.
-- [ ] Recorte exato idade 45–60 e colesterol 200–260 confirmado no app público (82 registros nos testes locais).
-- [ ] Recorte vazio confirmado no app público.
-- [ ] Tooltips e zoom da dispersão exercitados.
-- [ ] Expander, download CSV e link da fonte exercitados no servidor público.
+## Evidências atuais
 
-## Correção encontrada no teste online
+- [Laboratório publicado](evidencias/dashboard-1-publicado-2026-11-03.png)
+- [Panorama publicado](evidencias/dashboard-2-publicado-2026-11-03.png)
+- [Zoom e tooltip no gráfico público](evidencias/zoom-tooltip-publicado-2026-11-03.png)
+- [Validação automatizada e números de referência](validacao-automatizada.json)
 
-A versão inicial restaurava a contagem no backend, mas podia manter valores antigos dos sliders na interface. Isso foi corrigido usando `st.session_state` para atualizar explicitamente as variáveis, classes e intervalos. Os 15 testes locais passaram após a alteração e o navegador local mostrou o slider ST voltando de 0,1 a 0,0. A correção foi enviada ao GitHub para atualização automática do Streamlit; confirmar no servidor público antes de marcar a restauração acima.
+As capturas são reais, obtidas na versão pública em 03/11/2026. O histórico de 29/10, inclusive a restauração incompleta identificada naquela ocasião, permanece nos commits anteriores. A restauração foi agora reconferida na publicação.
 
-## Roteiro para concluir em InPrivate
+## Privacidade e limites
 
-1. No Edge, pressione Ctrl+Shift+N e abra a URL pública.
-2. Confirme os dois dashboards e altere os controles listados acima.
-3. Restrinja um intervalo; clique em Restaurar filtros e confirme também a posição dos sliders. Em seguida, filtre apenas Cardíaco: deve haver 137 registros e KPI positivo de 100%.
-4. Faça os recortes de 82 pacientes e vazio, baixe o CSV e confira suas colunas.
-5. Registre responsável, data, horário, navegador e capturas. Marque somente itens efetivamente executados.
+A revisão corresponde aos dados públicos efetivamente servidos pela aplicação e ao CSV baixado. Nenhuma coluna de identificação privada foi exibida ou exportada. Não se afirma uma auditoria geral da infraestrutura do provedor.
 
-Os testes automatizados locais são documentados em docs/VALIDACAO.md e não substituem esta conferência.
+A declaração de IA será entregue separadamente pelo aluno; não foi criada ou alterada nesta validação.
+
+## Retorno do aluno e ajuste dos dois controles
+
+Relato recebido em 03/11/2026: os filtros do recorte funcionam sem login; método de correlação e slider de máximo de classes pareciam não funcionar. O cálculo de correlação foi verificado como distinto entre os métodos. O título, a referência numérica e o redesenho do mapa foram tornados explícitos. O histograma agora usa número exato de classes calculadas previamente, em lugar do limite máximo automático do Altair.
+
+Após a publicação da alteração, verificar se aparece **Número de classes do histograma**, comparar 5 com 25 classes e trocar os métodos, observando o título **Mapa de correlação · método** e o coeficiente de referência. Não marcar o teste humano como integralmente aprovado antes dessa confirmação.

@@ -2,12 +2,19 @@
   "app_url": "https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/",
   "http_status": 200,
   "checked_at": "2026-10-29T10:24:44.841190-03:00",
-  "anonymous_browser_test": "InPrivate blocked by browser URL enforcement",
+  "anonymous_browser_test": "user_reported_public_filters_working_without_login; correlation_and_bins_retest_pending_after_update",
   "public_browser_access": "verified_without_author_login",
   "browser": "ChatGPT in-app browser, nova aba",
-  "remote_reset_after_fix": "pending_retest",
+  "remote_reset_after_fix": "verified_public_browser_2026-11-03",
   "evidence": [
-    "entregas/evidencias/dashboard-2-publicado.png"
+    "entregas/evidencias/dashboard-2-publicado.png",
+    "entregas/evidencias/dashboard-1-publicado-2026-11-03.png",
+    "entregas/evidencias/dashboard-2-publicado-2026-11-03.png",
+    "entregas/evidencias/zoom-tooltip-publicado-2026-11-03.png"
   ],
-  "filter_reset_fix_commit": "23fbf7c"
+  "filter_reset_fix_commit": "23fbf7c",
+  "last_public_ui_test_at": "2026-11-03T09:10:56.432549-03:00",
+  "public_ui_test": "passed_controls_download_reference_slice_empty_state_zoom_tooltips",
+  "ai_declaration": "out_of_repository_by_user_request_2026-11-03",
+  "user_report_2026_11_03": "Aluno confirmou filtros de recorte sem login; relatou que método e máximo de classes pareciam não responder."
 }

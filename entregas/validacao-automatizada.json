@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-03T09:18:01.076157-03:00",
+  "tests": 19,
+  "passed": true,
+  "python": "3.12.14",
+  "streamlit": "1.66.0",
+  "csv_download_public": {
+    "rows": 82,
+    "columns": 6,
+    "matches_local_reference": true
+  },
+  "full_sample_kpis": {
+    "n": 297,
+    "positivos": 137,
+    "diagnostico_pct": 46.12794612794613,
+    "angina_n": 97,
+    "angina_pct": 32.659932659932664,
+    "idade_mediana": 56.0,
+    "colesterol_mediano": 243.0,
+    "fc_mediana": 153.0
+  },
+  "scope": "Testes locais automatizados; teste publicado em arquivo separado.",
+  "histogram_exact_bins": "verified_5_20_25_50",
+  "correlation_methods": "verified_distinct_on_nonlinear_sample_and_UI_method_label"
+}

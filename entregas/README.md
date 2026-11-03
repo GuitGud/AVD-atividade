@@ -9,6 +9,8 @@
 - [x] Dois rascunhos em PDF nesta pasta.
 - [x] Testes locais dos cálculos e de todos os widgets de entrada.
 - [x] Revisão do esquema público e dos arquivos versionados.
+- [x] Justificativa técnica das métricas, com fórmulas, finalidade, validação e limites.
+- [x] Teste atual dos controles na aplicação pública, com evidências de 03/11/2026.
 - [x] Exemplo fictício de uso de IA, sem assinatura e identificado como fictício.
 
 - [x] Publicação no Streamlit Community Cloud com acesso público verificado.
@@ -17,11 +19,9 @@
 ## Pendências antes de entregar à professora
 
 - [ ] Executar e registrar os testes do app publicado em janela anônima.
-- [ ] Preencher a justificativa individual em justificativa-metricas.md.
-- [ ] Produzir e assinar a declaração real em prompts/DECLARACAO_IA.pdf.
 - [ ] Conferir aprovação do dataset e enviar os links/arquivos no Classroom.
 
-A declaração fictícia não vale como declaração real. A justificativa e a assinatura não foram preenchidas em nome do aluno.
+A declaração real será elaborada e entregue separadamente pelo aluno, fora do repositório, conforme sua orientação de 03/11/2026. Seu conteúdo e assinatura não foram alterados. A justificativa disponível é uma redação técnica com apoio de IA; não é apresentada como reflexão pessoal do aluno.
 
 ## Rascunhos dos dashboards
 

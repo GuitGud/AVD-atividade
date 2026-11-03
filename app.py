@@ -1,6 +1,7 @@
 """Heart Disease: laboratório e painel de pesquisa cardiovascular."""
 # [IA] Codex/OpenAI - estrutura Streamlit, widgets e integração dos dashboards.
 import streamlit as st
+import math
 from src.analytics import CLASSES, compute_kpis, filter_data
 from src.charts import SHORT_LABELS, age_composition, exams_scatter, heatmap, histogram, sex_comparison
 from src.data_loader import LABELS, VARS_QUANT, load_data
@@ -60,18 +61,22 @@ with lab:
     with config1:
         method = st.selectbox("Método de correlação", ["Spearman", "Pearson", "Kendall"], key="metodo")
     with config2:
-        bins = st.slider("Máximo de classes do histograma", 5, 50, 20, 5, key="bins")
+        bins = st.slider("Número de classes do histograma", 5, 50, 20, 5, key="bins",
+                         help="Número exato de intervalos de largura uniforme em cada histograma.")
     with config3:
         separate = st.toggle("Separar histogramas por desfecho", key="separar_classe")
     with st.container(border=True):
-        st.subheader("Mapa de correlação", anchor=False)
+        st.subheader(f"Mapa de correlação · {method}", anchor=False)
         if len(variaveis) < 2:
             st.info("Selecione pelo menos duas variáveis para calcular a correlação.")
         elif len(recorte) < 2:
             st.info("São necessários pelo menos dois pacientes no recorte para a correlação.")
         else:
-            st.altair_chart(heatmap(recorte, variaveis, method.lower()), width="stretch", key="heatmap",
+            st.altair_chart(heatmap(recorte, variaveis, method.lower()), width="stretch", key=f"heatmap_{method.lower()}",
                             alt=f"Matriz de correlação de {method} entre as medidas selecionadas no recorte")
+            pair = recorte[variaveis[:2]].corr(method=method.lower()).iloc[0, 1]
+            coefficient = f"{pair:.4f}" if math.isfinite(pair) else "indefinido"
+            st.caption(f"Método aplicado: {method} · {SHORT_LABELS[variaveis[0]]} × {SHORT_LABELS[variaveis[1]]}: {coefficient}")
             if recorte[variaveis].nunique().lt(2).any():
                 st.caption("— indica coeficiente indefinido: uma das medidas é constante no recorte.")
         st.caption("Escala fixa de -1 a +1 · cada célula mostra o coeficiente; o tooltip informa o número de pares.")
@@ -85,9 +90,9 @@ with lab:
             for container, var in zip(st.columns(2), variaveis[i:i + 2]):
                 with container, st.container(border=True):
                     st.markdown(f"**{LABELS[var]}**")
-                    st.altair_chart(histogram(recorte, var, bins, separate), width="stretch", key=f"hist_{var}",
+                    st.altair_chart(histogram(recorte, var, bins, separate), width="stretch", key=f"hist_{var}_{bins}_{int(separate)}",
                                     alt=f"Distribuição de {LABELS[var]} entre os pacientes do recorte")
-    st.caption("O controle define o máximo de classes; o Altair ajusta os limites para facilitar a leitura. Cores empilhadas representam contagens por desfecho.")
+    st.caption(f"Cada histograma usa exatamente {bins} classes de largura uniforme. O limite máximo pertence à última classe. Cores empilhadas representam contagens por desfecho.")
 
 with painel:
     st.header("Perfil do recorte para pesquisa", anchor=False)

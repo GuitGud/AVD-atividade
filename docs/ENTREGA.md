@@ -6,4 +6,4 @@ Comece pelo [README principal](../README.md), consulte os [rascunhos e pendênci
 
 Para demonstrar o projeto, execute `streamlit run app.py`, compare os métodos de correlação, altere os intervalos e mude para a aba de KPIs. Todos os resultados usam o mesmo recorte. Valores sem filtro e casos de teste estão em [VALIDACAO.md](VALIDACAO.md).
 
-A entrega à professora exige o repositório público, o app publicado e seu link no README, os dois rascunhos, a justificativa individual e a declaração real assinada. O exemplo fictício em prompts/ não substitui a declaração real. Confira os itens pendentes antes de enviar ao Classroom.
+O pacote contém o repositório público, o app publicado e seu link no README, os dois rascunhos e a justificativa técnica das métricas. O aluno informou que elaborará e entregará a declaração real separadamente, fora do repositório; os exemplos fictícios não a substituem. Consulte o registro atualizado dos testes e confira os itens de envio ao Classroom.

@@ -1,7 +1,7 @@
 """Especificações Altair compartilhadas pelos dois dashboards."""
 # [IA] Codex/OpenAI - sintaxe dos gráficos, escalas, rótulos e tooltips.
 import altair as alt
-from src.analytics import AGE_ORDER, CLASSES, correlation_table, grouped_outcomes
+from src.analytics import AGE_ORDER, CLASSES, correlation_table, grouped_outcomes, histogram_table
 from src.data_loader import LABELS
 
 SHORT_LABELS = {"age": "Idade", "trestbps": "Pressão", "chol": "Colesterol",
@@ -26,12 +26,21 @@ def heatmap(df, variables, method):
 
 
 def histogram(df, variable, bins, by_class):
-    chart = alt.Chart(df).mark_bar(opacity=0.78, binSpacing=1).encode(
-        x=alt.X(f"{variable}:Q", bin=alt.Bin(maxbins=bins), title=LABELS[variable]),
-        y=alt.Y("count():Q", title="Pacientes", axis=alt.Axis(tickMinStep=1)),
-        tooltip=[alt.Tooltip(f"{variable}:Q", bin=alt.Bin(maxbins=bins), title=LABELS[variable]), alt.Tooltip("count():Q", title="Pacientes")])
+    table = histogram_table(df, variable, bins, by_class)
+    chart = alt.Chart(table).mark_bar(opacity=0.78, binSpacing=1).encode(
+        x=alt.X("inicio:Q", bin="binned", title=LABELS[variable], scale=alt.Scale(zero=False)),
+        x2=alt.X2("fim:Q"),
+        y=alt.Y("pacientes:Q", title="Pacientes", axis=alt.Axis(tickMinStep=1)),
+        tooltip=[alt.Tooltip("inicio:Q", title="Início da classe", format=".2f"),
+                 alt.Tooltip("fim:Q", title="Fim da classe", format=".2f"),
+                 alt.Tooltip("pacientes:Q", title="Pacientes")])
     if by_class:
-        chart = chart.encode(color=alt.Color("doenca_cardiaca:N", title="Desfecho", scale=CLASS_SCALE), y=alt.Y("count():Q", stack="zero", title="Pacientes"))
+        chart = chart.encode(color=alt.Color("doenca_cardiaca:N", title="Desfecho", scale=CLASS_SCALE),
+                             y=alt.Y("pacientes:Q", stack="zero", title="Pacientes"),
+                             tooltip=[alt.Tooltip("inicio:Q", title="Início", format=".2f"),
+                                      alt.Tooltip("fim:Q", title="Fim", format=".2f"),
+                                      alt.Tooltip("doenca_cardiaca:N", title="Desfecho"),
+                                      alt.Tooltip("pacientes:Q", title="Pacientes")])
     else:
         chart = chart.encode(color=alt.value("#B44938"))
     return chart.properties(height=230)

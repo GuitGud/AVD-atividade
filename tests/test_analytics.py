@@ -3,7 +3,7 @@
 import unittest
 import numpy as np
 import pandas as pd
-from src.analytics import compute_kpis, correlation_table, filter_data, grouped_outcomes
+from src.analytics import compute_kpis, correlation_table, filter_data, grouped_outcomes, histogram_table
 
 
 class AnalyticsTest(unittest.TestCase):
@@ -49,6 +49,39 @@ class AnalyticsTest(unittest.TestCase):
             value = t.loc[(t.x == "a") & (t.y == "b"), "r"].iloc[0]
             self.assertAlmostEqual(value, -1)
             self.assertTrue(np.isnan(t.loc[(t.x == "constante") & (t.y == "a"), "r"].iloc[0]))
+
+    def test_numero_exato_de_classes_muda_e_preserva_contagem(self):
+        for bins in [5, 20, 25, 50]:
+            table = histogram_table(self.df, "chol", bins, False)
+            self.assertEqual(len(table), bins)
+            self.assertEqual(table.pacientes.sum(), len(self.df))
+            self.assertEqual(table.inicio.iloc[0], 100)
+            self.assertEqual(table.fim.iloc[-1], 900)
+            self.assertEqual(table.pacientes.iloc[-1], 1)
+
+    def test_classes_por_desfecho_usam_os_mesmos_limites(self):
+        table = histogram_table(self.df, "age", 5, True)
+        for label in ["Normal", "Cardíaco"]:
+            group = table[table.doenca_cardiaca == label]
+            self.assertEqual(len(group), 5)
+            self.assertEqual(group.pacientes.sum(), self.df.doenca_cardiaca.eq(label).sum())
+        np.testing.assert_allclose(table[table.doenca_cardiaca == "Normal"].inicio,
+                                   table[table.doenca_cardiaca == "Cardíaco"].inicio)
+
+    def test_histograma_de_medida_constante_preserva_todos(self):
+        table = histogram_table(pd.DataFrame({"age": [56, 56, 56]}), "age", 20, False)
+        self.assertEqual(len(table), 20)
+        self.assertEqual(table.pacientes.sum(), 3)
+
+    def test_metodo_muda_coeficientes_em_relacao_nao_linear(self):
+        df = pd.DataFrame({"age": [1, 2, 3, 4, 5], "chol": [1, 4, 9, 16, 25]})
+        results = {}
+        for method in ["pearson", "spearman", "kendall"]:
+            t = correlation_table(df, ["age", "chol"], method)
+            results[method] = t[(t.x == "age") & (t.y == "chol")].r.iloc[0]
+        self.assertLess(results["pearson"], 0.99)
+        self.assertAlmostEqual(results["spearman"], 1)
+        self.assertAlmostEqual(results["kendall"], 1)
 
 
 if __name__ == "__main__":

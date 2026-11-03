@@ -71,7 +71,7 @@ def sketch(number):
     text(c, x, h - 92, "Título + descrição do público + contagem do recorte", width, 12, True)
     box(c, x, h - 137, width, 27, "Abas: Dashboard 1 - Laboratório | Dashboard 2 - Panorama")
     if number == 1:
-        box(c, x, h - 188, width, 40, "Controles do laboratório", "Método de correlação / máximo de classes / separar desfechos")
+        box(c, x, h - 188, width, 40, "Controles do laboratório", "Método de correlação / número de classes / separar desfechos")
         box(c, x, h - 345, width, 145, "Mapa de calor da correlação", "Escala fixa -1 a +1; coeficientes anotados e número de pares no tooltip.")
         half = (width - 14) / 2
         box(c, x, 96, half, 135, "Histogramas: coluna 1", "Um histograma para cada medida selecionada, com unidade e contagem de pacientes.")
