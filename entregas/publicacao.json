@@ -2,7 +2,7 @@
   "app_url": "https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/",
   "http_status": 200,
   "checked_at": "2026-10-29T10:24:44.841190-03:00",
-  "anonymous_browser_test": "user_reported_public_filters_working_without_login; correlation_and_bins_retest_pending_after_update",
+  "anonymous_browser_test": "passed_user_confirmed_2026-11-03",
   "public_browser_access": "verified_without_author_login",
   "browser": "ChatGPT in-app browser, nova aba",
   "remote_reset_after_fix": "verified_public_browser_2026-11-03",
@@ -16,5 +16,16 @@
   "last_public_ui_test_at": "2026-11-03T09:10:56.432549-03:00",
   "public_ui_test": "passed_controls_download_reference_slice_empty_state_zoom_tooltips",
   "ai_declaration": "out_of_repository_by_user_request_2026-11-03",
-  "user_report_2026_11_03": "Aluno confirmou filtros de recorte sem login; relatou que método e máximo de classes pareciam não responder."
+  "user_report_2026_11_03": "Aluno confirmou filtros de recorte sem login; relatou que método e máximo de classes pareciam não responder.",
+  "anonymous_browser_confirmation": {
+    "confirmed_at": "2026-11-03T09:25:35.843285-03:00",
+    "source": "Resposta direta do aluno ao pedido de reteste na janela anônima",
+    "response": "Sim, os dois controles agora funcionam",
+    "scope": [
+      "acesso sem login e filtros de recorte previamente confirmados",
+      "número exato de classes, comparação de 5 e 25",
+      "troca Pearson/Spearman/Kendall com método e coeficiente visíveis"
+    ],
+    "method": "human_confirmation; not automated Edge test"
+  }
 }

@@ -4,7 +4,7 @@
 
 **Resultado da automação:** controles e visuais exercitados na versão pública, em uma nova aba do navegador integrado, sem login do autor. O teste posterior do aluno apontou dúvidas sobre dois controles; os ajustes e seu reteste estão descritos ao final. A aplicação estava suspensa por inatividade e foi reativada pelo botão público do Streamlit antes do teste.
 
-**Janela InPrivate:** teste solicitado ao aluno. Ele confirmou que o app abre sem login e que os filtros de recorte funcionam, mas relatou que método de correlação e máximo de classes pareciam não responder. O reteste desses dois controles está pendente após o ajuste. O controle nativo do Edge voltou a ser bloqueado por não conseguir determinar a URL com segurança. A sessão integrada sem login não foi apresentada como prova de uma janela InPrivate.
+**Janela InPrivate: confirmada pelo aluno em 03/11/2026.** Ele confirmou acesso sem login e funcionamento dos filtros de recorte e, após a atualização, respondeu ao pedido de reteste: "Sim, os dois controles agora funcionam". Essa confirmação refere-se à comparação de 5 e 25 classes e à troca Pearson/Spearman/Kendall solicitadas na janela anônima. Trata-se de confirmação humana, não de automação do Edge; o controle nativo permaneceu bloqueado pela verificação de URL.
 
 ## Casos executados
 
@@ -29,7 +29,7 @@
 - [x] Link da fonte abriu uma nova aba para a página oficial da UCI.
 - [x] Colunas do CSV conferidas: age, trestbps, chol, thalach, oldpeak e doenca_cardiaca; sem contatos, identificadores de pacientes ou credenciais.
 - [x] Link do app presente no README.
-- [ ] Confirmar o requisito específico de abertura e operação em janela InPrivate/anônima.
+- [x] Teste em janela InPrivate/anônima confirmado pelo aluno, incluindo o reteste bem-sucedido dos dois controles ajustados.
 
 ## Evidências atuais
 
@@ -50,4 +50,4 @@ A declaração de IA será entregue separadamente pelo aluno; não foi criada ou
 
 Relato recebido em 03/11/2026: os filtros do recorte funcionam sem login; método de correlação e slider de máximo de classes pareciam não funcionar. O cálculo de correlação foi verificado como distinto entre os métodos. O título, a referência numérica e o redesenho do mapa foram tornados explícitos. O histograma agora usa número exato de classes calculadas previamente, em lugar do limite máximo automático do Altair.
 
-Após a publicação da alteração, verificar se aparece **Número de classes do histograma**, comparar 5 com 25 classes e trocar os métodos, observando o título **Mapa de correlação · método** e o coeficiente de referência. Não marcar o teste humano como integralmente aprovado antes dessa confirmação.
+O reteste solicitado foi: recarregar a aplicação na janela anônima, conferir **Número de classes do histograma**, comparar 5 com 25 classes e trocar Pearson/Spearman/Kendall, observando o título e o coeficiente de referência. O aluno confirmou em 03/11/2026: **"Sim, os dois controles agora funcionam"**. O relato inicial foi mantido acima como histórico do problema e da correção; não há pendência desse reteste.

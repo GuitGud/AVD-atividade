@@ -15,10 +15,10 @@
 
 - [x] Publicação no Streamlit Community Cloud com acesso público verificado.
 - [x] Link real do app incluído no README.
+- [x] Teste em janela anônima confirmado pelo aluno, com os dois controles ajustados funcionando.
 
 ## Pendências antes de entregar à professora
 
-- [ ] Executar e registrar os testes do app publicado em janela anônima.
 - [ ] Conferir aprovação do dataset e enviar os links/arquivos no Classroom.
 
 A declaração real será elaborada e entregue separadamente pelo aluno, fora do repositório, conforme sua orientação de 03/11/2026. Seu conteúdo e assinatura não foram alterados. A justificativa disponível é uma redação técnica com apoio de IA; não é apresentada como reflexão pessoal do aluno.

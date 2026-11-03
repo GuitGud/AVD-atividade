@@ -14,7 +14,7 @@ Em 03/11/2026, a aplicação pública foi reativada após suspensão por inativi
 
 O teste confirmou a correção da restauração dos sliders no servidor público, inclusive após uma nova interação. Também confirmou o recorte de 82 pacientes, o CSV baixado, recorte vazio, zoom e tooltip da dispersão. As unidades dos cartões aparecem em linha própria.
 
-O teste literal em janela InPrivate não foi comprovado pela automação: o controle do Edge foi bloqueado por não determinar a URL com segurança. A confirmação solicitada ao aluno deve ser registrada separadamente, com indicação de que é uma confirmação humana.
+O teste literal em janela InPrivate foi confirmado pelo aluno em 03/11/2026. Ele informou acesso sem login e funcionamento dos filtros e, após o ajuste, confirmou o funcionamento do método de correlação e do número de classes. Essa validação é humana e está identificada dessa forma no registro; o controle automatizado do Edge permaneceu bloqueado pela verificação de URL.
 
 ## Números de referência
 
@@ -36,4 +36,4 @@ Os dois rascunhos PDF permanecem em entregas/, junto à justificativa técnica d
 
 O aluno confirmou acesso sem login e funcionamento dos filtros de recorte, mas relatou que a troca de método e o máximo de classes pareciam não responder. O cálculo de correlação foi conferido e produz coeficientes diferentes. A interface passou a destacar o método aplicado, exibir uma referência de quatro casas decimais e recriar o gráfico quando o método muda.
 
-O histograma deixou de usar maxbins automático do Altair. Agora os intervalos são calculados previamente com NumPy, em quantidade exata definida pelo slider, incluindo o máximo na última classe e preservando a soma das observações. Os controles foram renomeados para Número de classes do histograma. Os 19 testes passaram e as prévias estáticas foram regeneradas. A reconferência humana desses dois controles na publicação está pendente.
+O histograma deixou de usar maxbins automático do Altair. Agora os intervalos são calculados previamente com NumPy, em quantidade exata definida pelo slider, incluindo o máximo na última classe e preservando a soma das observações. Os controles foram renomeados para Número de classes do histograma. Os 19 testes passaram e as prévias estáticas foram regeneradas. A reconferência humana desses dois controles na publicação foi concluída: o aluno respondeu "Sim, os dois controles agora funcionam" ao pedido de reteste na janela anônima.

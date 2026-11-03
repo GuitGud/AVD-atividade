@@ -7,7 +7,7 @@ Laboratório de distribuição/correlação e panorama descritivo para **coorden
 <!-- APP_PUBLICADO:INICIO -->
 **App publicado:** [Abrir os dois dashboards](https://avd-atividade-w5d8w43i4vfnpdt4ktapyr.streamlit.app/)
 
-Acesso público sem login e controles dos dois dashboards conferidos em 03/11/2026. O recorte de 82 pacientes, o CSV, a restauração, o zoom e os tooltips foram verificados no app publicado. O estado do teste específico InPrivate está no [registro dos testes](entregas/teste-app-publicado.md).
+Acesso público sem login e controles dos dois dashboards conferidos em 03/11/2026. O recorte de 82 pacientes, o CSV, a restauração, o zoom e os tooltips foram verificados no app publicado. O teste em janela InPrivate foi confirmado pelo aluno após o ajuste dos controles. Os resultados e a origem de cada verificação estão no [registro dos testes](entregas/teste-app-publicado.md).
 <!-- APP_PUBLICADO:FIM -->
 
 [Repositório público](https://github.com/GuitGud/AVD-atividade) · [Instruções de publicação](docs/PUBLICACAO.md) · [Checklist de entrega](entregas/README.md)
