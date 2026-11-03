@@ -48,4 +48,4 @@ O recorte de idade entre 45 e 60 anos e colesterol entre 200 e 260 mg/dL contém
 
 A base é histórica e foi formada por pacientes de um contexto clínico específico. Os percentuais descrevem a amostra disponível, não a prevalência ou o risco da população. A remoção de seis registros sem exames pode afetar sua composição. Comparações entre grupos são descritivas; os gráficos não demonstram causalidade, não controlam fatores de confusão e não orientam diagnóstico ou tratamento. A redução do recorte pode produzir grupos pequenos ou medidas constantes; esses casos recebem tratamento explícito na interface.
 
-**Autoria e entrega:** este texto documenta as razões técnicas do desenho e as verificações automatizadas, sem afirmar que o aluno o redigiu sozinho. A declaração de IA será elaborada e entregue separadamente pelo aluno, conforme sua orientação de 03/11/2026.
+**Autoria e entrega:** este texto documenta as razões técnicas do desenho e as verificações automatizadas, sem afirmar que o aluno o redigiu sozinho.

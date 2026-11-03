@@ -20,7 +20,7 @@
 
 - [ ] Conferir aprovação do dataset e enviar os links/arquivos no Classroom.
 
-A declaração real será elaborada e entregue separadamente pelo aluno, fora do repositório, conforme sua orientação de 03/11/2026. Seu conteúdo e assinatura não foram alterados. A justificativa disponível é uma redação técnica com apoio de IA; não é apresentada como reflexão pessoal do aluno.
+A justificativa disponível é uma redação técnica com apoio de IA; não é apresentada como reflexão pessoal do aluno.
 
 ## Rascunhos dos dashboards
 

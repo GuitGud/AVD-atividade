@@ -30,7 +30,7 @@ Os percentuais são descritivos da base histórica e do recorte, sem extrapolaç
 
 ## Arquivos de entrega
 
-Os dois rascunhos PDF permanecem em entregas/, junto à justificativa técnica das métricas e às evidências dos testes. A declaração real não foi criada, modificada ou assinada; por orientação do aluno, será entregue separadamente, fora do repositório.
+Os dois rascunhos PDF permanecem em entregas/, junto à justificativa técnica das métricas e às evidências dos testes.
 
 ## Ajuste após o teste do aluno em 03/11/2026
 

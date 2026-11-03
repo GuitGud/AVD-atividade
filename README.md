@@ -59,10 +59,10 @@ entregas/rascunho-dashboard-1.pdf    rascunho do laboratório
 entregas/rascunho-dashboard-2.pdf    rascunho do panorama
 entregas/justificativa-metricas.md   definições e justificativa técnica com apoio de IA
 entregas/previews/                  nove gráficos reais exportados, sem captura de navegador
-prompts/README.md                  orientação sobre a declaração entregue separadamente
+prompts/README.md                  informações sobre materiais de apoio
 ```
 
-**Declaração de IA:** o aluno informou em 03/11/2026 que a elaborará e entregará separadamente, fora do repositório. Nenhuma declaração real foi criada, alterada ou assinada nesta finalização. A justificativa técnica das métricas declara seu apoio de IA e não simula reflexão pessoal.
+**Apoio de IA:** este projeto recebeu auxílio de inteligência artificial no desenvolvimento e na documentação.
 
 **Dataset:** Heart Disease também aparece na demonstração da disciplina. O uso foi confirmado pelo aluno, mas a aprovação docente como dataset próprio deve ser conferida por ele.
 

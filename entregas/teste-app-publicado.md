@@ -44,8 +44,6 @@ As capturas são reais, obtidas na versão pública em 03/11/2026. O histórico 
 
 A revisão corresponde aos dados públicos efetivamente servidos pela aplicação e ao CSV baixado. Nenhuma coluna de identificação privada foi exibida ou exportada. Não se afirma uma auditoria geral da infraestrutura do provedor.
 
-A declaração de IA será entregue separadamente pelo aluno; não foi criada ou alterada nesta validação.
-
 ## Retorno do aluno e ajuste dos dois controles
 
 Relato recebido em 03/11/2026: os filtros do recorte funcionam sem login; método de correlação e slider de máximo de classes pareciam não funcionar. O cálculo de correlação foi verificado como distinto entre os métodos. O título, a referência numérica e o redesenho do mapa foram tornados explícitos. O histograma agora usa número exato de classes calculadas previamente, em lugar do limite máximo automático do Altair.
