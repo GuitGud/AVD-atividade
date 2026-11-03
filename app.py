@@ -142,5 +142,5 @@ with st.expander("Dados, métodos e transparência"):
                  column_config={c: LABELS[c] for c in variaveis}, alt="Prévia dos registros públicos que atendem aos filtros")
     st.download_button("Baixar recorte em CSV", recorte[cols].to_csv(index=False).encode("utf-8"),
                        file_name="heart_disease_recorte.csv", mime="text/csv", key="download_recorte")
-    st.caption("Apoio de IA na implementação: trechos marcados com [IA]. O registro ilustrativo em prompts/ é fictício; a declaração real será elaborada pelo aluno.")
+    st.caption("Apoio de IA na implementação: trechos marcados com [IA]. A declaração de uso de IA será elaborada e entregue separadamente pelo aluno.")
 st.caption("Guilherme Alcoforado Rabelo · AVD 2026.2 · UCI Heart Disease")

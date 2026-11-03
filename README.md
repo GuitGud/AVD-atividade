@@ -59,11 +59,10 @@ entregas/rascunho-dashboard-1.pdf    rascunho do laboratório
 entregas/rascunho-dashboard-2.pdf    rascunho do panorama
 entregas/justificativa-metricas.md   definições e justificativa técnica com apoio de IA
 entregas/previews/                  nove gráficos reais exportados, sem captura de navegador
-prompts/exemplo-dialogo-ficticio.md  diálogo inventado, identificado como fictício
-prompts/EXEMPLO_FICTICIO_DECLARACAO_IA.pdf  exemplo ilustrativo sem assinatura
+prompts/README.md                  orientação sobre a declaração entregue separadamente
 ```
 
-**Declaração de IA:** o aluno informou em 03/11/2026 que a elaborará e entregará separadamente, fora do repositório. Nenhuma declaração real foi criada, alterada ou assinada nesta finalização. Os exemplos fictícios em `prompts/` permanecem apenas como referência, identificados como fictícios, e não substituem o documento real. A justificativa técnica das métricas declara seu apoio de IA e não simula reflexão pessoal.
+**Declaração de IA:** o aluno informou em 03/11/2026 que a elaborará e entregará separadamente, fora do repositório. Nenhuma declaração real foi criada, alterada ou assinada nesta finalização. A justificativa técnica das métricas declara seu apoio de IA e não simula reflexão pessoal.
 
 **Dataset:** Heart Disease também aparece na demonstração da disciplina. O uso foi confirmado pelo aluno, mas a aprovação docente como dataset próprio deve ser conferida por ele.
 

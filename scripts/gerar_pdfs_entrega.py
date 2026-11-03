@@ -1,14 +1,9 @@
-"""Gera dois rascunhos vetoriais e um exemplo fictício de declaração."""
-# [IA] Codex/OpenAI - diagramação dos rascunhos e do exemplo fictício.
+"""Gera os dois rascunhos vetoriais dos dashboards."""
+# [IA] Codex/OpenAI - diagramação dos rascunhos dos dashboards.
 from pathlib import Path
-import re
-from xml.sax.saxutils import escape
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER
 from reportlab.lib.pagesizes import A4, landscape
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen.canvas import Canvas
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle
 
 ROOT = Path(__file__).resolve().parents[1]
 BG = colors.HexColor("#FCFAF7")
@@ -92,65 +87,8 @@ def sketch(number):
     c.showPage(); c.save()
 
 
-def example_pdf():
-    out = ROOT / "prompts/EXEMPLO_FICTICIO_DECLARACAO_IA.pdf"
-    styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name="BodyCustom", fontName="Helvetica", fontSize=10, leading=14, spaceAfter=9, textColor=INK))
-    styles.add(ParagraphStyle(name="TitleCustom", fontName="Helvetica-Bold", fontSize=21, leading=25, spaceAfter=15, textColor=INK))
-    styles.add(ParagraphStyle(name="LabelCustom", fontName="Helvetica-Bold", fontSize=12, leading=16, spaceBefore=12, spaceAfter=8, textColor=ACCENT))
-    doc = SimpleDocTemplate(str(out), pagesize=A4, leftMargin=46, rightMargin=46, topMargin=65, bottomMargin=55)
-    story = []
-    def p(s, style="BodyCustom"):
-        story.append(Paragraph(s, styles[style]))
-    def heading(s): p(s, "LabelCustom")
-    p("EXEMPLO FICTÍCIO<br/>Declaração de uso de IA", "TitleCustom")
-    p("<b>NÃO É REGISTRO REAL. NÃO ASSINAR NEM ENTREGAR COMO DECLARAÇÃO VERDADEIRA.</b>")
-    p("Este modelo foi inventado para ilustrar a organização do template da atividade Streamlit AVD 2026.2. Não reproduz a conversa real, não comprova escolhas do aluno e não substitui o documento verdadeiro e assinado, que será elaborado pessoalmente por ele.")
-    heading("1. Identificação - exemplo")
-    for s in ["Aluno: estudante fictício", "Turma e e-mail: não preenchidos", "Projeto ilustrativo: dois dashboards Heart Disease", "Data ilustrativa: 29/10/2026"]: p(s)
-    heading("2 e 3. Diretrizes e declaração geral")
-    p("Num registro verdadeiro, o aluno precisa declarar fielmente quais usos ocorreram, conferir as diretrizes da professora e assinalar somente uma opção que corresponda à realidade. Nenhuma opção de veracidade é assinalada neste exemplo.")
-    heading("4. Ferramentas - cenário fictício")
-    p("Assistente de programação: Codex/OpenAI; versão e plano não especificados. Skill oficial do Streamlit: developing-with-streamlit. Apoio ilustrativo: estrutura de layout, sintaxe dos gráficos e depuração.")
-    story.append(PageBreak())
-    heading("5. Registro de usos - diálogo inteiramente inventado")
-    md = (ROOT / "prompts/exemplo-dialogo-ficticio.md").read_text(encoding="utf-8")
-    dialogue = md.split("## Diálogo ilustrativo", 1)[1].split("## Como aproveitar", 1)[0]
-    for para in dialogue.strip().split("\n\n"):
-        safe = escape(para.strip())
-        safe = re.sub(r"\*\*(.*?)\*\*", r"<b>\1</b>", safe)
-        p(safe)
-    story.append(PageBreak())
-    heading("5. Exemplo de bloco de registro - fictício")
-    for label, body in [
-        ("Data / ferramenta", "29/10/2026 / assistente fictício de programação"),
-        ("Parte da atividade", "Sintaxe do mapa de calor e dos histogramas"),
-        ("Finalidade ilustrada", "Implementar os tipos de gráfico já definidos no diálogo fictício."),
-        ("Pedido inventado", "Desenhar o mapa com escala fixa e gerar um histograma por medida."),
-        ("Aproveitamento hipotético", "No exemplo, o aluno aproveita a sintaxe e ajusta textos e cores."),
-        ("Verificação hipotética", "Num caso real, registrar os testes efetivamente realizados e seus resultados."),
-        ("Anexo", "Diálogo fictício das páginas anteriores; não há link de conversa real.")]:
-        p(f"<b>{label}:</b> {body}")
-    heading("6. Trechos com apoio de IA - exemplo")
-    p("Em um registro verdadeiro, marcar cada trecho apoiado com # [IA] ferramenta - finalidade e relacionar os arquivos correspondentes. O exemplo de anotação não prova autoria nem validação.")
-    heading("7. Reflexão individual")
-    p("Não foi redigida uma reflexão em nome do aluno. No documento real, ele escreverá pessoalmente de 10 a 15 linhas sobre o uso que efetivamente fez, as escolhas das métricas, as alterações e a conferência do trabalho.")
-    heading("8. Termo de responsabilidade e assinatura")
-    p("Não há termo de autenticidade preenchido nem assinatura simulada. O aluno produzirá e assinará pessoalmente sua declaração real como prompts/DECLARACAO_IA.pdf, seguindo o template da professora.")
-    def page(c, doc):
-        w, h = A4
-        c.setFillColor(ACCENT); c.rect(0, h - 36, w, 36, fill=1, stroke=0)
-        c.setFillColor(colors.white); c.setFont("Helvetica-Bold", 9)
-        c.drawCentredString(w / 2, h - 23, "EXEMPLO FICTÍCIO - NÃO É DECLARAÇÃO REAL")
-        c.setFillColor(MUTED); c.setFont("Helvetica", 8)
-        c.drawString(46, 29, "Modelo ilustrativo sem assinatura - AVD 2026.2")
-        c.drawRightString(w - 46, 29, str(doc.page))
-    doc.build(story, onFirstPage=page, onLaterPages=page)
-
-
 if __name__ == "__main__":
     (ROOT / "entregas").mkdir(exist_ok=True)
     sketch(1)
     sketch(2)
-    example_pdf()
-    print("Dois rascunhos e um exemplo fictício gerados.")
+    print("Dois rascunhos de dashboards gerados.")

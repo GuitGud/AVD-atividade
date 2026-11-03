@@ -11,7 +11,6 @@
 - [x] Revisão do esquema público e dos arquivos versionados.
 - [x] Justificativa técnica das métricas, com fórmulas, finalidade, validação e limites.
 - [x] Teste atual dos controles na aplicação pública, com evidências de 03/11/2026.
-- [x] Exemplo fictício de uso de IA, sem assinatura e identificado como fictício.
 
 - [x] Publicação no Streamlit Community Cloud com acesso público verificado.
 - [x] Link real do app incluído no README.
